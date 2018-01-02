@@ -1,20 +1,20 @@
 #loggar golang
 
+##build
+###build
 ```
-C:\Users\webnl\Documents\_workspace\loggar-go\src\practice-go\helloWorld (master)
+C:\Users\webnl\Documents\_workspace_go\src\practice-go\stringutil (master)
 λ go build
-
-C:\Users\webnl\Documents\_workspace\loggar-go\src\practice-go\helloWorld (master)
-λ helloWorld
-hello, world
 ```
 
+###run
 ```
 C:\Users\webnl\Documents\_workspace\loggar-go\src\practice-go\helloWorld (master)
 λ go run helloWorld.go
 hello, world
 ```
 
+##install
 ###set go env
 >windows 
 * this pc - user system variables - set GOPATH, GOBIN
@@ -46,4 +46,33 @@ set CGO_CXXFLAGS=-g -O2
 set CGO_FFLAGS=-g -O2
 set CGO_LDFLAGS=-g -O2
 set PKG_CONFIG=pkg-config
+```
+
+###install
+```
+C:\Users\webnl\Documents\_workspace_go\src\practice-go (master)
+λ go install practice-go/hello
+```
+or 
+```
+C:\Users\webnl\Documents\_workspace_go\src\practice-go (master)
+λ cd hello
+C:\Users\webnl\Documents\_workspace_go\src\practice-go\hello (master)
+λ go install
+```
+```
+C:\Users\webnl\Documents\_workspace_go\bin
+λ hello
+hello, world
+```
+
+##testing
+```
+C:\Users\webnl\Documents\_workspace_go\src\practice-go\stringutil (master)
+λ go build
+
+C:\Users\webnl\Documents\_workspace_go\src\practice-go\stringutil (master)
+λ go test
+PASS
+ok      practice-go/stringutil  0.740s
 ```
