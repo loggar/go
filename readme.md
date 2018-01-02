@@ -76,3 +76,16 @@ C:\Users\webnl\Documents\_workspace_go\src\practice-go\stringutil (master)
 PASS
 ok      practice-go/stringutil  0.740s
 ```
+
+##Remote packages
+```
+C:\Users\webnl\Documents\_workspace_go
+λ go get github.com/loggar/go/hello
+
+C:\Users\webnl\Documents\_workspace_go
+λ C:\Users\webnl\Documents\_workspace_go\bin\hello
+hello, world
+```
+```
+import "github.com/loggar/go/stringutil"
+```
