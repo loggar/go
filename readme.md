@@ -89,3 +89,9 @@ hello, world
 ```
 import "github.com/loggar/go/stringutil"
 ```
+
+###Commentary
+```
+$ godoc regexp | grep -i parse
+$ godoc regexp | grep parse
+```
