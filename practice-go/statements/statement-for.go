@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func test() {
 	sum := 0
 	for i := 0; i < 10; i++ {
 		sum += i
