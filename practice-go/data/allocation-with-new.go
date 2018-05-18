@@ -19,5 +19,5 @@ func main() {
 	var v SyncedBuffer     // type  SyncedBuffer
 
 	fmt.Println(p)
-	fmt.Println(v)
+	fmt.Println(&v)
 }
