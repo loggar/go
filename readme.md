@@ -4,22 +4,22 @@ This repository has been writing for a personal development practice and buildin
 
 ## Golang
 
-##build
-###build
+## build
+### build
 ```
 C:\Users\webnl\Documents\_workspace_go\src\practice-go\stringutil (master)
 λ go build
 ```
 
-###run
+### run
 ```
 C:\Users\webnl\Documents\_workspace\loggar-go\src\practice-go\helloWorld (master)
 λ go run helloWorld.go
 hello, world
 ```
 
-##install
-###set go env
+## install
+### set go env
 >windows 
 * this pc - user system variables - set GOPATH, GOBIN
 
@@ -52,7 +52,7 @@ set CGO_LDFLAGS=-g -O2
 set PKG_CONFIG=pkg-config
 ```
 
-###install
+### install
 ```
 C:\Users\webnl\Documents\_workspace_go\src\practice-go (master)
 λ go install practice-go/hello
@@ -70,7 +70,7 @@ C:\Users\webnl\Documents\_workspace_go\bin
 hello, world
 ```
 
-##testing
+## testing
 ```
 C:\Users\webnl\Documents\_workspace_go\src\practice-go\stringutil (master)
 λ go build
@@ -81,7 +81,7 @@ PASS
 ok      practice-go/stringutil  0.740s
 ```
 
-##Remote packages
+## Remote packages
 ```
 C:\Users\webnl\Documents\_workspace_go
 λ go get github.com/loggar/go/hello
@@ -94,7 +94,7 @@ hello, world
 import "github.com/loggar/go/stringutil"
 ```
 
-###Commentary
+### Commentary
 ```
 $ godoc regexp | grep -i parse
 $ godoc regexp | grep parse
