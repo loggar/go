@@ -13,3 +13,6 @@ debug
 
 # visual studio code
 .vscode
+
+# temp
+_tmp/
