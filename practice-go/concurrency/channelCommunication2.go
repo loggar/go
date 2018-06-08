@@ -1,15 +1,15 @@
 package main
 
-var c = make(chan int)
-var a string
+var ch1 = make(chan int)
+var str1 string
 
-func f() {
-	a = "hello, world"
-	<-c
+func f1() {
+	str1 = "hello, world"
+	<-ch1
 }
 
-func main() {
-	go f()
-	c <- 0
-	print(a)
+func channelCommunication2() {
+	go f1()
+	ch1 <- 0
+	print(str1)
 }

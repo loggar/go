@@ -2,19 +2,19 @@ package main
 
 import "sync"
 
-var l sync.Mutex
-var a string
+var l1 sync.Mutex
+var a1 string
 
-func f() {
-	a = "hello, world"
-	l.Unlock()
+func fn1() {
+	a1 = "hello, world"
+	l1.Unlock()
 }
 
-func main() {
-	l.Lock()
-	go f()
-	l.Lock()
-	print(a)
+func locks() {
+	l1.Lock()
+	go fn1()
+	l1.Lock()
+	print(a1)
 }
 
 /*

@@ -1,12 +1,12 @@
 package main
 
-var a string
+var str0 string
 
-func f() {
-	print(a)
+func fn0() {
+	print(str0)
 }
 
-func main() {
-	a = "Hello, world"
-	go f()
+func gorutineCreation() {
+	str0 = "Hello, world"
+	go fn0()
 }

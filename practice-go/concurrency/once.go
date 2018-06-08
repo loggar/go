@@ -2,19 +2,19 @@ package main
 
 import "sync"
 
-var a string
+var a2 string
 var once sync.Once
 
 func setup() {
-	a = "hello, world"
+	a2 = "hello, world"
 }
 
 func doprint() {
 	once.Do(setup)
-	print(a)
+	print(a2)
 }
 
-func main() {
+func onceRun() {
 	go doprint()
 	go doprint()
 }
