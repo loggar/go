@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func varFn() {
 	action := func() {
 		fmt.Println("anonymous fn")
 	}
