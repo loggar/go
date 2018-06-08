@@ -20,10 +20,10 @@ hello, world
 
 ## install
 ### set go env
->windows 
+> windows 
 * this pc - user system variables - set GOPATH, GOBIN
 
->bash
+> bash
 * export GOPATH=$HOME/_workspace_go
 * export GOBIN=$HOME/_workspace_go/bin
 
