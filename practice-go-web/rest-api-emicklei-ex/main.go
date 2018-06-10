@@ -6,7 +6,7 @@ import (
 
 	restful "github.com/emicklei/go-restful"
 
-	userservice "github.com/loggar/go/practice-go-web/restful-emicklei-ex/userservice"
+	userservice "github.com/loggar/go/practice-go-web/rest-api-emicklei-ex/userservice"
 )
 
 func main() {
