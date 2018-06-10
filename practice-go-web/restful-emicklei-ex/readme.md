@@ -6,12 +6,6 @@ install
 go get "github.com/emicklei/go-restful"
 ```
 
-build
-
-```
-
-```
-
 run
 
 ```
