@@ -13,7 +13,7 @@ import (
 
 var gopath = os.Getenv("GOPATH")
 var rootDir = "/src/github.com/loggar/go"
-var saveDir = "/_tmp/practice-web-application/gowiki/"
+var saveDir = "/_tmp/practice-go-web/gowiki/"
 
 var templates = template.Must(template.ParseFiles("edit.html", "view.html"))
 var validPath = regexp.MustCompile("^/(edit|save|view)/([a-zA-Z0-9]+)$")
