@@ -20,7 +20,7 @@ func (cw *cntWriter) written() int {
 	return cw.count
 }
 
-func main() {
+func modular() {
 	cw := &cntWriter{}
 	cw.write("sample text 1")
 	cw.write("sample text 2")

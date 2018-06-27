@@ -1,0 +1,28 @@
+GET http://localhost:18080/users
+
+###
+
+GET http://localhost:18080/users/11
+
+###
+
+PUT http://localhost:18080/users/11 
+content-type: application/json
+
+{
+	"Name" : "xxx"
+}
+
+###
+
+POST http://localhost:18080/users/11 
+content-type: application/json
+
+{
+	"Name" : "yyy"
+}
+
+###
+
+DELETE http://localhost:18080/users/11
+

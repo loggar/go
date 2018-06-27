@@ -7,7 +7,7 @@ import (
 
 var count int
 
-func write(s string) {
+func write2(s string) {
 	fmt.Printf("%s\n", s)
 	count += len(s)
 	if count >= 32 {
@@ -16,9 +16,9 @@ func write(s string) {
 	}
 }
 
-func main() {
-	write("sample text 1")
-	write("sample text 2")
-	write("sample text 3")
-	write("sample text 4")
+func external_var() {
+	write2("sample text 1")
+	write2("sample text 2")
+	write2("sample text 3")
+	write2("sample text 4")
 }

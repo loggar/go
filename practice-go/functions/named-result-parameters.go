@@ -17,7 +17,7 @@ func nextDigit(s string, pos int) (value, nextPos int) {
 	return
 }
 
-func main() {
+func nextDigitRun() {
 	var v, p int = nextDigit("string", 0)
 	fmt.Printf("%d, %d\n", v, p)
 }
