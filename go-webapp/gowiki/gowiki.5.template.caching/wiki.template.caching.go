@@ -11,7 +11,7 @@ import (
 
 var gopath = os.Getenv("GOPATH")
 var rootDir = "/src/github.com/loggar/go"
-var saveDir = "/_tmp/practice-go-web/gowiki/"
+var saveDir = "/_data/practice-go-web/gowiki/"
 
 var templates = template.Must(template.ParseFiles("edit.html", "view.html"))
 
