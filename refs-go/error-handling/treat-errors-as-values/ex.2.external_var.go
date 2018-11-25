@@ -16,7 +16,7 @@ func write2(s string) {
 	}
 }
 
-func external_var() {
+func externalVar() {
 	write2("sample text 1")
 	write2("sample text 2")
 	write2("sample text 3")
