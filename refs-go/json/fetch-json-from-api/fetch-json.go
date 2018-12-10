@@ -10,7 +10,7 @@ import (
 )
 
 func fetch() {
-	url := "http://api.open-notify.org/astros.json"
+	url := "https://loggar.github.io/note/sample-res/sample.astros.json"
 
 	spaceClient := http.Client{
 		Timeout: time.Second * 2, // Maximum of 2 secs
