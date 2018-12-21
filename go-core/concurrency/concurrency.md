@@ -6,7 +6,7 @@ from https://golang.org/doc/effective_go.html#concurrency
 
 Like maps, channels are allocated with make, and the resulting value acts as a reference to an underlying data structure. If an optional integer parameter is provided, it sets the buffer size for the channel. The default is zero, for an unbuffered or synchronous channel.
 
-```
+```go
 ci := make(chan int)            // unbuffered channel of integers
 cj := make(chan int, 0)         // unbuffered channel of integers
 cs := make(chan *os.File, 100)  // buffered channel of pointers to Files
@@ -16,7 +16,7 @@ Unbuffered channels combine communication—the exchange of a value—with synch
 
 There are lots of nice idioms using channels. Here's one to get us started. In the previous section we launched a sort in the background. A channel can allow the launching goroutine to wait for the sort to complete.
 
-```
+```go
 c := make(chan int)  // Allocate a channel.
 // Start the sort in a goroutine; when it completes, signal on the channel.
 go func() {
@@ -31,7 +31,7 @@ Receivers always block until there is data to receive. If the channel is unbuffe
 
 A buffered channel can be used like a semaphore, for instance to limit throughput. In this example, incoming requests are passed to handle, which sends a value into the channel, processes the request, and then receives a value from the channel to ready the “semaphore” for the next consumer. The capacity of the channel buffer limits the number of simultaneous calls to process.
 
-```
+```go
 var sem = make(chan int, MaxOutstanding)
 
 func handle(r *Request) {
@@ -52,7 +52,7 @@ Once MaxOutstanding handlers are executing process, any more will block trying t
 
 This design has a problem, though: Serve creates a new goroutine for every incoming request, even though only MaxOutstanding of them can run at any moment. As a result, the program can consume unlimited resources if the requests come in too fast. We can address that deficiency by changing Serve to gate the creation of the goroutines. Here's an obvious solution, but beware it has a bug we'll fix subsequently:
 
-```
+```go
 func Serve(queue chan *Request) {
     for req := range queue {
         sem <- 1
@@ -66,7 +66,7 @@ func Serve(queue chan *Request) {
 
 The bug is that in a Go for loop, the loop variable is reused for each iteration, so the req variable is shared across all goroutines. That's not what we want. We need to make sure that req is unique for each goroutine. Here's one way to do that, passing the value of req as an argument to the closure in the goroutine:
 
-```
+```go
 func Serve(queue chan *Request) {
     for req := range queue {
         sem <- 1
@@ -80,7 +80,7 @@ func Serve(queue chan *Request) {
 
 Compare this version with the previous to see the difference in how the closure is declared and run. Another solution is just to create a new variable with the same name, as in this example:
 
-```
+```go
 func Serve(queue chan *Request) {
     for req := range queue {
         req := req // Create new instance of req for the goroutine.
@@ -95,7 +95,7 @@ func Serve(queue chan *Request) {
 
 It may seem odd to write
 
-```
+```go
 req := req
 ```
 
@@ -103,7 +103,7 @@ but it's legal and idiomatic in Go to do this. You get a fresh version of the va
 
 Going back to the general problem of writing the server, another approach that manages resources well is to start a fixed number of handle goroutines all reading from the request channel. The number of goroutines limits the number of simultaneous calls to process. This Serve function also accepts a channel on which it will be told to exit; after launching the goroutines it blocks receiving from that channel.
 
-```
+```go
 func handle(queue chan *Request) {
     for r := range queue {
         process(r)
@@ -125,7 +125,7 @@ One of the most important properties of Go is that a channel is a first-class va
 
 In the example in the previous section, handle was an idealized handler for a request but we didn't define the type it was handling. If that type includes a channel on which to reply, each client can provide its own path for the answer. Here's a schematic definition of type Request.
 
-```
+```go
 type Request struct {
     args        []int
     f           func([]int) int
@@ -135,7 +135,7 @@ type Request struct {
 
 The client provides a function and its arguments, as well as a channel inside the request object on which to receive the answer.
 
-```
+```go
 func sum(a []int) (s int) {
     for _, v := range a {
         s += v
@@ -152,7 +152,7 @@ fmt.Printf("answer: %d\n", <-request.resultChan)
 
 On the server side, the handler function is the only thing that changes.
 
-```
+```go
 func handle(queue chan *Request) {
     for req := range queue {
         req.resultChan <- req.f(req.args)
@@ -168,7 +168,7 @@ Another application of these ideas is to parallelize a calculation across multip
 
 Let's say we have an expensive operation to perform on a vector of items, and that the value of the operation on each item is independent, as in this idealized example.
 
-```
+```go
 type Vector []float64
 
 // Apply the operation to v[i], v[i+1] ... up to v[n-1].
@@ -182,7 +182,7 @@ func (v Vector) DoSome(i, n int, u Vector, c chan int) {
 
 We launch the pieces independently in a loop, one per CPU. They can complete in any order but it doesn't matter; we just count the completion signals by draining the channel after launching all the goroutines.
 
-```
+```go
 const numCPU = 4 // number of CPU cores
 
 func (v Vector) DoAll(u Vector) {
@@ -200,13 +200,13 @@ func (v Vector) DoAll(u Vector) {
 
 Rather than create a constant value for numCPU, we can ask the runtime what value is appropriate. The function runtime.NumCPU returns the number of hardware CPU cores in the machine, so we could write
 
-```
+```go
 var numCPU = runtime.NumCPU()
 ```
 
 There is also a function runtime.GOMAXPROCS, which reports (or sets) the user-specified number of cores that a Go program can have running simultaneously. It defaults to the value of runtime.NumCPU but can be overridden by setting the similarly named shell environment variable or by calling the function with a positive number. Calling it with zero just queries the value. Therefore if we want to honor the user's resource request, we should write
 
-```
+```go
 var numCPU = runtime.GOMAXPROCS(0)
 ```
 
@@ -216,7 +216,7 @@ Be sure not to confuse the ideas of concurrency—structuring a program as indep
 
 The tools of concurrent programming can even make non-concurrent ideas easier to express. Here's an example abstracted from an RPC package. The client goroutine loops receiving data from some source, perhaps a network. To avoid allocating and freeing buffers, it keeps a free list, and uses a buffered channel to represent it. If the channel is empty, a new buffer gets allocated. Once the message buffer is ready, it's sent to the server on serverChan.
 
-```
+```go
 var freeList = make(chan *Buffer, 100)
 var serverChan = make(chan *Buffer)
 
@@ -239,7 +239,7 @@ func client() {
 
 The server loop receives each message from the client, processes it, and returns the buffer to the free list.
 
-```
+```go
 func server() {
     for {
         b := <-serverChan    // Wait for work.
