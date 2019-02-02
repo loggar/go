@@ -1,0 +1,6 @@
+version: "2"
+services:
+  go-dockerizing-minimal-ex:
+    build: ./go-dockerizing-minimal-ex
+    ports:
+       - "3030:3001"

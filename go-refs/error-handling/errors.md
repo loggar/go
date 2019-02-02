@@ -6,15 +6,15 @@ Library routines must often return some sort of error indication to the caller. 
 
 By convention, errors have type error, a simple built-in interface.
 
-``` go
+```go
 type error interface {
     Error() string
 }
 ```
 
-A library writer is free to implement this interface with a richer model under the covers, making it possible not only to see the error but also to provide some context. As mentioned, alongside the usual *os.File return value, os.Open also returns an error value. If the file is opened successfully, the error will be nil, but when there is a problem, it will hold an os.PathError:
+A library writer is free to implement this interface with a richer model under the covers, making it possible not only to see the error but also to provide some context. As mentioned, alongside the usual \*os.File return value, os.Open also returns an error value. If the file is opened successfully, the error will be nil, but when there is a problem, it will hold an os.PathError:
 
-``` go
+```go
 // PathError records an error and the operation and
 // file path that caused it.
 type PathError struct {
@@ -40,7 +40,7 @@ When feasible, error strings should identify their origin, such as by having a p
 
 Callers that care about the precise error details can use a type switch or a type assertion to look for specific errors and extract details. For PathErrors this might include examining the internal Err field for recoverable failures.
 
-``` go
+```go
 for try := 0; try < 2; try++ {
     file, err = os.Create(filename)
     if err == nil {
@@ -54,7 +54,7 @@ for try := 0; try < 2; try++ {
 }
 ```
 
-The second if statement here is another type assertion. If it fails, ok will be false, and e will be nil. If it succeeds, ok will be true, which means the error was of type *os.PathError, and then so is e, which we can examine for more information about the error.
+The second if statement here is another type assertion. If it fails, ok will be false, and e will be nil. If it succeeds, ok will be true, which means the error was of type \*os.PathError, and then so is e, which we can examine for more information about the error.
 
 ## Panic
 
@@ -62,7 +62,7 @@ The usual way to report an error to a caller is to return an error as an extra r
 
 For this purpose, there is a built-in function panic that in effect creates a run-time error that will stop the program (but see the next section). The function takes a single argument of arbitrary type—often a string—to be printed as the program dies. It's also a way to indicate that something impossible has happened, such as exiting an infinite loop.
 
-``` go
+```go
 // A toy implementation of cube root using Newton's method.
 func CubeRoot(x float64) float64 {
     z := x/3   // Arbitrary initial value
@@ -80,7 +80,7 @@ func CubeRoot(x float64) float64 {
 
 This is only an example but real library functions should avoid panic. If the problem can be masked or worked around, it's always better to let things continue to run rather than taking down the whole program. One possible counterexample is during initialization: if the library truly cannot set itself up, it might be reasonable to panic, so to speak.
 
-``` go
+```go
 var user = os.Getenv("USER")
 
 func init() {
@@ -98,7 +98,7 @@ A call to recover stops the unwinding and returns the argument passed to panic. 
 
 One application of recover is to shut down a failing goroutine inside a server without killing the other executing goroutines.
 
-``` go
+```go
 func server(workChan <-chan *Work) {
     for work := range workChan {
         go safelyDo(work)
@@ -121,7 +121,7 @@ Because recover always returns nil unless called directly from a deferred functi
 
 With our recovery pattern in place, the do function (and anything it calls) can get out of any bad situation cleanly by calling panic. We can use that idea to simplify error handling in complex software. Let's look at an idealized version of a regexp package, which reports parsing errors by calling panic with a local error type. Here's the definition of Error, an error method, and the Compile function.
 
-``` go
+```go
 // Error is the type of a parse error; it satisfies the error interface.
 type Error string
 func (e Error) Error() string {
@@ -152,7 +152,7 @@ If doParse panics, the recovery block will set the return value to nil—deferre
 
 With error handling in place, the error method (because it's a method bound to a type, it's fine, even natural, for it to have the same name as the builtin error type) makes it easy to report parse errors without worrying about unwinding the parse stack by hand:
 
-``` go
+```go
 if pos == 0 {
     re.error("'*' illegal at start of expression")
 }
