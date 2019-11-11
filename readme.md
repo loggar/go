@@ -33,7 +33,6 @@ hello, world
 - export GOBIN=\$HOME/\_workspace_go/bin
 
 ```
-λ go env
 set GOARCH=amd64
 set GOBIN=C:\Users\webnl\Documents\_workspace_go\bin
 set GOEXE=.exe
