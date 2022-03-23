@@ -186,4 +186,4 @@ This will generate documentation for the Description function inside our package
 godoc -http=":8080"
 ```
 
-Now go to the URL http://localhost:6060/pkg/ and see the documentation of the package we just created.
+Now go to the URL http://localhost:8080/pkg/ and see the documentation of the package we just created.
