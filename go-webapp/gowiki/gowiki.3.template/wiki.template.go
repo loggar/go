@@ -11,7 +11,7 @@ import (
 
 var gopath = os.Getenv("GOPATH")
 var rootDir = "/src/github.com/loggar/go"
-var saveDir = "/_data/practice-go-web/gowiki/"
+var saveDir = "/go_data/practice-go-web/gowiki/"
 
 // Page is an wiki page structure
 type Page struct {
