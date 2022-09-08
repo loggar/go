@@ -8,6 +8,11 @@ import (
 	"net/url"
 )
 
+// User ...
+type User struct {
+	ID, Name string
+}
+
 // Client ...
 type Client struct {
 	BaseURL   *url.URL
