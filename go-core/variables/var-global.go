@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-var g = "global"
+var g = "global" // package level variables
 
 func printLocal() {
 	l := "local"
