@@ -2,7 +2,7 @@ Charly
 
 # Golang
 
-## build
+## build and run
 
 ### build
 
