@@ -6,7 +6,7 @@ func fn0() {
 	print(str0)
 }
 
-func gorutineCreation() {
+func goroutineCreation() {
 	str0 = "Hello, world"
 	go fn0()
 }
