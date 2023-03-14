@@ -1,0 +1,9 @@
+# go test
+
+## clean test-cache and test:
+
+```
+GOCACHE=off go test ./...
+go clean -testcache && go test ./...
+go test -count=1 ./...
+```
