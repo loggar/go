@@ -15,7 +15,7 @@ coverage/
 /bin
 
 # visual studio code
-.vscode
+# .vscode
 
 # temp
 _tmp/
