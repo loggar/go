@@ -7,7 +7,7 @@ Charly
 ### build
 
 ```
-C:\Users\webnl\Documents\_workspace_go\src\practice-go\stringutil (master)
+<workspace>\src\practice-go\stringutil (master)
 λ go build
 ```
 
@@ -34,12 +34,12 @@ hello, world
 
 ```
 set GOARCH=amd64
-set GOBIN=C:\Users\webnl\Documents\_workspace_go\bin
+set GOBIN=<workspace>\bin
 set GOEXE=.exe
 set GOHOSTARCH=amd64
 set GOHOSTOS=windows
 set GOOS=windows
-set GOPATH=C:\Users\webnl\Documents\_workspace_go
+set GOPATH=<workspace>
 set GORACE=
 set GOROOT=C:\_dev\Go
 set GOTOOLDIR=C:\_dev\Go\pkg\tool\windows_amd64
@@ -59,21 +59,21 @@ set PKG_CONFIG=pkg-config
 ### install
 
 ```
-C:\Users\webnl\Documents\_workspace_go\src\practice-go (master)
+<workspace>\src\practice-go (master)
 λ go install practice-go/hello
 ```
 
 or
 
 ```
-C:\Users\webnl\Documents\_workspace_go\src\practice-go (master)
+<workspace>\src\practice-go (master)
 λ cd hello
-C:\Users\webnl\Documents\_workspace_go\src\practice-go\hello (master)
+<workspace>\src\practice-go\hello (master)
 λ go install
 ```
 
 ```
-C:\Users\webnl\Documents\_workspace_go\bin
+<workspace>\bin
 λ hello
 hello, world
 ```
@@ -81,10 +81,10 @@ hello, world
 ## testing
 
 ```
-C:\Users\webnl\Documents\_workspace_go\src\practice-go\stringutil (master)
+<workspace>\src\practice-go\stringutil (master)
 λ go build
 
-C:\Users\webnl\Documents\_workspace_go\src\practice-go\stringutil (master)
+<workspace>\src\practice-go\stringutil (master)
 λ go test
 PASS
 ok      practice-go/stringutil  0.740s
@@ -100,11 +100,11 @@ $ godoc regexp | grep parse
 ## Remote packages
 
 ```
-C:\Users\webnl\Documents\_workspace_go
+<workspace>
 λ go get github.com/loggar/go/hello
 
-C:\Users\webnl\Documents\_workspace_go
-λ C:\Users\webnl\Documents\_workspace_go\bin\hello
+<workspace>
+λ <workspace>\bin\hello
 hello, world
 ```
 
