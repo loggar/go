@@ -6,13 +6,14 @@ import (
 	"os"
 )
 
-func main() {
-	if err := write("readme.txt", "This is a readme file"); err != nil {
+//nolint:go-staticcheck
+func main_5() {
+	if err := write1("readme.txt", "This is a readme file"); err != nil {
 		log.Fatal("failed to write file:", err)
 	}
 }
 
-func write(fileName string, text string) error {
+func write1(fileName string, text string) error {
 	file, err := os.Create(fileName)
 	if err != nil {
 		return err

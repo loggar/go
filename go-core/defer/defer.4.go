@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func main_4() {
 	// defer statement is executed, and places
 	// fmt.Println("Bye") on a list to be executed prior to the function returning
 	defer fmt.Println("Bye")

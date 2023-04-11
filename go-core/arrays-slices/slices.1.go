@@ -1,7 +1,8 @@
-package main
+package array1
 
 import "fmt"
 
+//lint:ignore U1000 // ignore unused variable warning
 func slices() {
 	mySlice := []int{2, 3, 5, 7, 11, 13}
 	fmt.Println(mySlice)
@@ -16,6 +17,7 @@ func slices() {
 	// [11 13]
 }
 
+//lint:ignore U1000 // ignore unused variable warning
 func slicesWithMake() {
 	cities := make([]string, 3)
 	cities[0] = "Santa Monica"
@@ -25,6 +27,7 @@ func slicesWithMake() {
 	// ["Santa Monica" "Venice" "Los Angeles"]
 }
 
+//lint:ignore U1000 // ignore unused variable warning
 func length() {
 	cities := []string{
 		"Santa Monica",
@@ -38,6 +41,7 @@ func length() {
 	// 42
 }
 
+//lint:ignore U1000 // ignore unused variable warning
 func nilSlice() {
 	var z []int
 	fmt.Println(z, len(z), cap(z))
@@ -48,12 +52,14 @@ func nilSlice() {
 	// nil!
 }
 
+//lint:ignore U1000 // ignore unused variable warning
 func append1() {
 	x := []int{1, 2, 3}
 	x = append(x, 4, 5, 6)
 	fmt.Println(x)
 }
 
+//lint:ignore U1000 // ignore unused variable warning
 func append2() {
 	x := []int{1, 2, 3}
 	y := []int{4, 5, 6}

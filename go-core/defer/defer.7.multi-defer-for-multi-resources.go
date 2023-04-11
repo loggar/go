@@ -7,17 +7,18 @@ import (
 	"os"
 )
 
-func main() {
-	if err := write("sample.txt", "This file contains some sample text."); err != nil {
+//lint:ignore U1000 // ignore unused variable warning//lint:ignore U1000 // ignore unused variable warning
+func main_7() {
+	if err := write2("sample.txt", "This file contains some sample text."); err != nil {
 		log.Fatal("failed to create file")
 	}
 
 	if err := fileCopy("sample.txt", "sample-copy.txt"); err != nil {
-		log.Fatal("failed to copy file: %s")
+		log.Fatal("failed to copy file")
 	}
 }
 
-func write(fileName string, text string) error {
+func write2(fileName string, text string) error {
 	file, err := os.Create(fileName)
 	if err != nil {
 		return err

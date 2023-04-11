@@ -1,9 +1,13 @@
-package main
+package array1
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
 
-func main() {
-	// var bookings = [50]string{"Jane", "John", "Peter"}
+	"github.com/stretchr/testify/assert"
+)
+
+func TestArray1(t *testing.T) {
 	var bookings = [50]string{}
 
 	bookings[0] = "Jane"
@@ -15,4 +19,7 @@ func main() {
 	fmt.Printf("array bookings type: %T\n", bookings)
 	fmt.Printf("array bookings length: %v\n", len(bookings))
 
+	length := len(bookings)
+	expected := 50
+	assert.Equal(t, expected, length, "len(%v) should equal %f", bookings, expected)
 }

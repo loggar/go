@@ -91,7 +91,7 @@ func b() {
 	a()
 }
 
-func main() {
+func main_1() {
 	b()
 }
 

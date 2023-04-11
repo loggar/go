@@ -1,24 +1,8 @@
-package main
+package array1
 
-import (
-	"fmt"
-)
+import "fmt"
 
-// Sum ...
-func Sum(a *[3]float64) (sum float64) {
-	for _, v := range *a {
-		sum += v
-	}
-	return
-}
-
-func main() {
-	array := [...]float64{7.0, 8.5, 9.1}
-	x := Sum(&array) // Note the explicit address-of operator
-
-	fmt.Println(x)
-}
-
+//nolint:unused // ignore unused variable warning
 func arrayMultiDimensional() {
 	var a [2][3]string
 	for i := 0; i < 2; i++ {

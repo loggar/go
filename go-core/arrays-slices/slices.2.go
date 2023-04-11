@@ -1,8 +1,9 @@
-package main
+package array1
 
 import "fmt"
 
-func main() {
+//lint:ignore U1000 // ignore unused variable warning
+func arrayAppend() {
 	// slice
 	// var bookings = []string{}
 	bookings := []string{}
@@ -14,5 +15,4 @@ func main() {
 	fmt.Printf("The whole slice bookings: %v\n", bookings)
 	fmt.Printf("slice bookings type: %T\n", bookings)
 	fmt.Printf("slice bookings length: %v\n", len(bookings))
-
 }
