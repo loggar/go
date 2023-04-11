@@ -10,7 +10,7 @@ type response struct {
 	Fruits     []string `json:"fruits"`
 }
 
-func testMain() {
+func testmain() {
 	str := `{"page": 1, "fruits": ["apple", "peach"]}`
 	res := response{}
 	json.Unmarshal([]byte(str), &res)

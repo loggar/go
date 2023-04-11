@@ -68,7 +68,8 @@ func (ts *TransactionStack) RollBackTransaction() {
 	}
 }
 
-/*Commit write(SET) changes to the store with TranscationStack scope
+/*
+Commit write(SET) changes to the store with TranscationStack scope
 Also write changes to disk/file, if data needs to persist after the shell closes
 */
 func (ts *TransactionStack) Commit() {

@@ -2,7 +2,7 @@
   "name": "Go & PostgreSQL",
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
-  "workspaceFolder": "/workspace",
+  "workspaceFolder": "/go/src/github.com/loggar/go",
   // Configure tool-specific properties.
   "customizations": {
     // Configure properties specific to VS Code.

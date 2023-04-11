@@ -26,7 +26,7 @@ func (c cat) description() string {
 	return fmt.Sprintf("Sound: %v", c.Sound)
 }
 
-func testMain() {
+func testmain() {
 	var a animal
 	a = snake{Poisonous: true}
 	fmt.Println(a.description())
