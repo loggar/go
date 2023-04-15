@@ -2,7 +2,7 @@ package array1
 
 import "fmt"
 
-//nolint:unused // ignore unused variable warning
+//lint:ignore U1000 // ignore unused variable warning
 func arrayMultiDimensional() {
 	var a [2][3]string
 	for i := 0; i < 2; i++ {

@@ -1,4 +1,4 @@
-package array1
+package slice1
 
 import "fmt"
 
