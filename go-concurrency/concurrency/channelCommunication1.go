@@ -1,7 +1,9 @@
 package main
 
-var c = make(chan int, 10)
-var a string
+var (
+	c = make(chan int, 10)
+	a string
+)
 
 func f() {
 	a = "hello, world"

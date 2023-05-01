@@ -1,1 +1,12 @@
-{}
+{
+    "[go]": {
+        "editor.defaultFormatter": "golang.go",
+        "editor.formatOnSave": true
+    },
+    "go.gopath": "~/ws-loggar/go",
+    "go.goroot": "/opt/homebrew/bin/go",
+    "go.useLanguageServer": true,
+    "gopls": {
+        "formatting.gofumpt": true
+    }
+}
