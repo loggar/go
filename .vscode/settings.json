@@ -2,5 +2,8 @@
     "[go]": {
         "editor.defaultFormatter": "golang.go",
         "editor.formatOnSave": true
-    }
+    },
+    "go.gopath": "${env:HOME}/ws-loggar/go",
+    "go.goroot": "${env:HOME}/.goenv/versions/1.18.5",
+    "go.toolsGopath": "${env:HOME}/ws-loggar/go"
 }
