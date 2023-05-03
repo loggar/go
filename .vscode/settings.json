@@ -3,7 +3,7 @@
         "editor.defaultFormatter": "golang.go",
         "editor.formatOnSave": true
     },
-    "go.gopath": "${env:HOME}/ws-loggar/go",
-    "go.goroot": "${env:HOME}/.goenv/versions/1.18.5",
-    "go.toolsGopath": "${env:HOME}/ws-loggar/go"
+    "go.gopath": "/Users/charly.lee/ws-loggar/go",
+    "go.goroot": "/Users/charly.lee/.goenv/versions/1.18.5",
+    "go.toolsGopath": "/Users/charly.lee/ws-loggar/go"
 }
