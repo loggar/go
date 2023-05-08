@@ -10,7 +10,7 @@ var count_len = 70
 var res []string
 var mutex sync.Mutex
 
-func main() {
+func main_mutex_1() {
 	now := time.Now()
 	var wg sync.WaitGroup
 	for i := 0; i < (count_len); i++ {

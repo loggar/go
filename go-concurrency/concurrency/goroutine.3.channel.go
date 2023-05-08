@@ -6,9 +6,9 @@ import (
 	"time"
 )
 
-func main() {
+func main_3() {
 	c := make(chan string)
-	go count("hello", c)
+	go count_3("hello", c)
 
 	for {
 		msg, open := <-c
@@ -19,7 +19,7 @@ func main() {
 	}
 }
 
-func count(str string, c chan string) {
+func count_3(str string, c chan string) {
 	for i := 1; i <= 5; i++ {
 		c <- strconv.Itoa(i) + string(' ') + str
 		time.Sleep(time.Millisecond * 600)

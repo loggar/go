@@ -14,7 +14,7 @@ func goroutine() {
 	wg.Done()
 }
 
-func main() {
+func main_11() {
 	wg.Add(1)
 
 	go goroutine()

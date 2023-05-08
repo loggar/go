@@ -10,7 +10,7 @@ func f() {
 	c <- 0
 }
 
-func main() {
+func main_0() {
 	go f()
 	<-c
 	print(a)

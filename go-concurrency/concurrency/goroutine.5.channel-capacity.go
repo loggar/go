@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func main_5() {
 	c := make(chan string, 2)
 
 	c <- "aaa"

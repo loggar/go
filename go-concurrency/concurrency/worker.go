@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func main_worker_1() {
 	max := 45
 	jobs := make(chan int, max)
 	results := make(chan int, max)
