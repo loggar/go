@@ -1,6 +1,11 @@
 package slice1
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 //lint:ignore U1000 // ignore unused variable warning
 func slices() {
@@ -18,7 +23,7 @@ func slices() {
 }
 
 //lint:ignore U1000 // ignore unused variable warning
-func slicesWithMake() {
+func slicesFromMake() {
 	cities := make([]string, 3)
 	cities[0] = "Santa Monica"
 	cities[1] = "Venice"
@@ -65,4 +70,18 @@ func append2() {
 	y := []int{4, 5, 6}
 	x = append(x, y...)
 	fmt.Println(x)
+}
+
+func TestSliceMakeLenCap(t *testing.T) {
+	var langs = make([]string, 3, 5)
+
+	langs[0], langs[1], langs[2] = "Python", "Go", "Javascript"
+
+	assert.Equal(t, 3, len(langs), "len should equal %d", 3)
+	assert.Equal(t, 5, cap(langs), "cap should equal %d", 5)
+
+	langs = append(langs, "Java", "Kotlin", "PHP")
+
+	assert.Equal(t, 6, len(langs), "len should equal %d", 6)
+	assert.Equal(t, 10, cap(langs), "cap should equal %d", 10)
 }

@@ -22,7 +22,7 @@ func TestSliceIterate(t *testing.T) {
 		s2 += string(c)
 	}
 
-	//Using for loop with range
+	// Using for loop with range
 	start, i, end := 2, 2, 5
 	for range code[start:end] {
 		fmt.Printf("Element at index %d = %c \n", i, code[i])
