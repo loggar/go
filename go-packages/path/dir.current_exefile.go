@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 )
 
-func main() {
+func currentExecutableFile() {
 	ex, err := os.Executable()
 	if err != nil {
 		panic(err)

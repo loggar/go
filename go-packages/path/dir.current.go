@@ -3,9 +3,14 @@ package main
 import (
 	"fmt"
 	"os"
+	"path/filepath"
 )
 
-func main() {
+func currentDir() {
+	fmt.Println(filepath.Abs("./"))
+}
+
+func currentWorkDir() {
 	pwd, err := os.Getwd()
 	if err != nil {
 		fmt.Println(err)

@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 )
 
-func main() {
+func absolutePath() {
 	abs, err := filepath.Abs("./")
 	if err == nil {
 		fmt.Println("Absolute:", abs)

@@ -14,10 +14,6 @@ func main() {
 }
 
 /*
-$ cd /Users/Arman/go/src/github.com/rmaan/project/
-$ go run main.go  --my-path /Users/Arman/go/src/github.com/rmaan/project/
-provided path was /Users/Arman/go/src/github.com/rmaan/project/
-$ # or more easily
-$ go run main.go  --my-path `pwd`
-provided path was /Users/Arman/go/src/github.com/rmaan/project/
+$ go run ./go-packages/path/provided.command_option.go --my-path $HOME/ws-loggar/go/src/github.com/loggar/go
+$ go run ./go-packages/path/provided.command_option.go --my-path `pwd`
 */

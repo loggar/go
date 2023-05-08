@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func main() {
+func goPath() {
 	gopath := os.Getenv("GOPATH")
 	fmt.Println(gopath)
 	if gopath == "" {
