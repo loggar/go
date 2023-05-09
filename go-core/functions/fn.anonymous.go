@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func fn2() {
 	addAnonymous := func(nums ...int) (result int) {
 		fmt.Println("anonymous function")
 		for i := 0; i < len(nums); i++ {

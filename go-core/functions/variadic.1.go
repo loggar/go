@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func main_1() {
 	sayHello()
 	sayHello("Sammy")
 	sayHello("Sammy", "Jessica", "Drew", "Jamie")

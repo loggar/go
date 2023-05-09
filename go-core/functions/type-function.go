@@ -9,7 +9,7 @@ func calNum(f calculatorNum, a int, b int) int {
 	return result
 }
 
-func main() {
+func fn3() {
 	multi := func(i int, j int) int {
 		return i * j
 	}

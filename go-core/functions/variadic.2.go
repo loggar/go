@@ -2,20 +2,20 @@ package main
 
 import "fmt"
 
-func main() {
+func main_2() {
 	var line string
 
-	line = join(",", []string{"Sammy", "Jessica", "Drew", "Jamie"})
+	line = join_2(",", []string{"Sammy", "Jessica", "Drew", "Jamie"})
 	fmt.Println(line)
 
-	line = join(",", []string{"Sammy", "Jessica"})
+	line = join_2(",", []string{"Sammy", "Jessica"})
 	fmt.Println(line)
 
-	line = join(",", []string{"Sammy"})
+	line = join_2(",", []string{"Sammy"})
 	fmt.Println(line)
 }
 
-func join(del string, values []string) string {
+func join_2(del string, values []string) string {
 	var line string
 	for i, v := range values {
 		line = line + v
