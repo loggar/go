@@ -10,7 +10,7 @@ import (
 
 func TestReadArray(t *testing.T) {
 	dataArray, errRead := jsonsample.ReadArray("data.ex.data.json")
-	assert.NoError(t, errRead, "Read1() should not return an error")
+	assert.NoError(t, errRead, "ReadArray() should not return an error")
 
 	expectedLength := 8
 	assert.Equal(t, expectedLength, len(dataArray), "len(dataArray) should be %d", expectedLength)

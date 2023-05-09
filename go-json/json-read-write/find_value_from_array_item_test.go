@@ -9,18 +9,21 @@ import (
 )
 
 func TestFindFirstMatch(t *testing.T) {
-	array1, errRead1 := json_sample.ReadArray("data.ex.data.json")
-	assert.NoError(t, errRead1, "Read1() should not return an error")
+	array1, err := json_sample.ReadArray("data.ex.data.json")
+	assert.NoError(t, err, "ReadArray() should not return an error")
 
-	value1 := json_sample.FindFirstPathMatch(array1, "invalid-value")
+	v1 := "invalid-value"
+	value1 := json_sample.FindFirstPathMatch(array1, v1)
 	expectedValue1 := ""
-	assert.Equal(t, expectedValue1, value1, "first match for %s should equal to %s", value1, expectedValue1)
+	assert.Equal(t, expectedValue1, value1, "first match for %s should equal to %s", v1, expectedValue1)
 
-	value2 := json_sample.FindFirstPathMatch(array1, "/def-156")
+	v2 := "/def-156"
+	value2 := json_sample.FindFirstPathMatch(array1, v2)
 	expectedValue2 := "the-new-value-1"
-	assert.Equal(t, expectedValue2, value2, "first match for %s should equal to %s", value2, expectedValue2)
+	assert.Equal(t, expectedValue2, value2, "first match for %s should equal to %s", v2, expectedValue2)
 
-	value3 := json_sample.FindFirstPathMatch(array1, "/jrh-629")
+	v3 := "/jrh-629"
+	value3 := json_sample.FindFirstPathMatch(array1, v3)
 	expectedValue3 := "the-new-value-6"
-	assert.Equal(t, expectedValue3, value3, "first match for %s should equal to %s", value3, expectedValue3)
+	assert.Equal(t, expectedValue3, value3, "first match for %s should equal to %s", v3, expectedValue3)
 }

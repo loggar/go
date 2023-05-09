@@ -19,7 +19,7 @@ func updateData(data *jsonsample.JSONData) {
 
 func TestConvertDataToJsonString(t *testing.T) {
 	data1, errReadStruct := jsonsample.ReadStruct1("data.ex.target.json")
-	assert.NoError(t, errReadStruct, "Read1() should not return an error")
+	assert.NoError(t, errReadStruct, "ReadArray() should not return an error")
 	assert.NotNil(t, data1, "data should not be nil")
 
 	updateData(data1)
@@ -31,7 +31,7 @@ func TestConvertDataToJsonString(t *testing.T) {
 
 func TestWriteDataToJsonFile(t *testing.T) {
 	data1, errReadStruct := jsonsample.ReadStruct1("data.ex.target.json")
-	assert.NoError(t, errReadStruct, "Read1() should not return an error")
+	assert.NoError(t, errReadStruct, "ReadArray() should not return an error")
 	assert.NotNil(t, data1, "data should not be nil")
 
 	updateData(data1)
@@ -41,6 +41,6 @@ func TestWriteDataToJsonFile(t *testing.T) {
 	assert.NoError(t, errWrite, "WriteDataToJsonFile() should not return an error")
 
 	data2, errReadStruct := jsonsample.ReadStruct1(outFilePath)
-	assert.NoError(t, errReadStruct, "Read1() should not return an error")
+	assert.NoError(t, errReadStruct, "ReadArray() should not return an error")
 	assert.Equal(t, data1, data2, "Error")
 }

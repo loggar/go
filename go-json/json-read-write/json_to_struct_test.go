@@ -10,7 +10,7 @@ import (
 
 func TestReadStruct1(t *testing.T) {
 	data1, errReadStruct := jsonsample.ReadStruct1("data.ex.target.json")
-	assert.NoError(t, errReadStruct, "Read1() should not return an error")
+	assert.NoError(t, errReadStruct, "ReadArray() should not return an error")
 	assert.NotNil(t, data1, "data should not be nil")
 
 	topArray := data1.TopArrayElement

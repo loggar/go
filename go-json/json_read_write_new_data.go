@@ -53,7 +53,7 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	fmt.Printf("NEW JSON of %s:\n%s\n", jsonTarget1, jsonStr)
+	fmt.Printf("NEW JSON - %s:\n%s\n", jsonTarget1, jsonStr)
 
 	err = json_sample.WriteDataToJsonFile(data1, outFilePath)
 	if err != nil {
