@@ -5,21 +5,21 @@ import (
 	"log"
 )
 
-func main() {
-	divideByZero()
+func main_5() {
+	divideByZero_5()
 	fmt.Println("we survived dividing by zero!")
 
 }
 
-func divideByZero() {
+func divideByZero_5() {
 	defer func() {
 		if err := recover(); err != nil {
 			log.Println("panic occurred:", err)
 		}
 	}()
-	fmt.Println(divide(1, 0))
+	fmt.Println(divide_5(1, 0))
 }
 
-func divide(a, b int) int {
+func divide_5(a, b int) int {
 	return a / b
 }

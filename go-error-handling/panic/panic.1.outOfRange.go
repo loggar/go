@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func main_1() {
 	names := []string{
 		"lobster",
 		"sea urchin",
