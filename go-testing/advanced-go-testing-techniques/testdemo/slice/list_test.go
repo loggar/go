@@ -3,7 +3,7 @@ package slice
 import (
 	"testing"
 
-	"github.com/segmentio/testdemo/suite"
+	"github.com/loggar/go/go-testing/advanced-go-testing-techniques/testdemo/suite"
 )
 
 func TestSuite(t *testing.T) {

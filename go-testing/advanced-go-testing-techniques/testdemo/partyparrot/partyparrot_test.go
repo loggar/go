@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/segmentio/testdemo/partyparrot"
+	"github.com/loggar/go/go-testing/advanced-go-testing-techniques/testdemo/partyparrot"
 )
 
 func TestParty(t *testing.T) {

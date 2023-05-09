@@ -3,7 +3,7 @@ package suite
 import (
 	"testing"
 
-	"github.com/segmentio/testdemo"
+	"github.com/loggar/go/go-testing/advanced-go-testing-techniques/testdemo"
 )
 
 type Config struct {
