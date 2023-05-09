@@ -1,0 +1,36 @@
+{
+  "array1": [
+    {
+      "newPath": "the-new-value-1",
+      "path": "/def-156"
+    },
+    {
+      "newPath": "the-new-value-2",
+      "path": "/abc-223"
+    },
+    {
+      "newPath": "the-new-value-3",
+      "path": "/djk-347"
+    },
+    {
+      "newPath": "the-new-value-4",
+      "path": "/fhg-496"
+    },
+    {
+      "newPath": "the-new-value-5",
+      "path": "/wer-595"
+    },
+    {
+      "newPath": "the-new-value-6",
+      "path": "/jrh-629"
+    },
+    {
+      "newPath": "the-new-value-7",
+      "path": "/def-156"
+    },
+    {
+      "newPath": "the-new-value-8",
+      "path": "/abc-223"
+    }
+  ]
+}

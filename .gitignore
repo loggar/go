@@ -24,4 +24,4 @@ coverage/
 _tmp/
 
 # out
-/out
+/_out/

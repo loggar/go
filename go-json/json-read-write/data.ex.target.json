@@ -1,0 +1,35 @@
+{
+  "topKey": {
+    "key0": "/some/url"
+  },
+  "topArrayElement": [
+    {
+      "newPath": "this-is-target",
+      "path": "/abc-223",
+      "subArr": []
+    },
+    {
+      "newPath": "this-is-target",
+      "path": "/wer-595",
+      "subArr": [
+        {
+          "newPath": "this-is-target",
+          "path": "/djk-347"
+        },
+        {
+          "newPath": "this-is-target",
+          "path": "/jrh-629"
+        },
+        {
+          "newPath": "this-is-target",
+          "path": "/def-156"
+        }
+      ]
+    },
+    {
+      "newPath": "this-is-target",
+      "path": "/fhg-496",
+      "subArr": []
+    }
+  ]
+}
