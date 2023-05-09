@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func main() {
+func for_each() {
 	// slice
 	// var bookings = []string{}
 	bookings := []string{}

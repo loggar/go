@@ -8,15 +8,15 @@ import (
 	"time"
 )
 
-type User struct {
+type User_2 struct {
 	Name          string    `json:"name"`
 	Password      string    `json:"password"`
 	PreferredFish []string  `json:"preferredFish"`
 	CreatedAt     time.Time `json:"createdAt"`
 }
 
-func main() {
-	u := &User{
+func main_1_2() {
+	u := &User_2{
 		Name:      "Sammy the Shark",
 		Password:  "fisharegreat",
 		CreatedAt: time.Now(),

@@ -2,12 +2,7 @@ package main
 
 import "fmt"
 
-type Creature struct {
-	Name     string
-	Greeting string
-}
-
-func (c Creature) Greet() Creature {
+func (c Creature) Greet2() Creature {
 	fmt.Printf("%s says %s!\n", c.Name, c.Greeting)
 	return c
 }
@@ -16,12 +11,12 @@ func (c Creature) SayGoodbye(name string) {
 	fmt.Println("Farewell", name, "!")
 }
 
-func main() {
+func test_2() {
 	sammy := Creature{
 		Name:     "Sammy",
 		Greeting: "Hello!",
 	}
-	sammy.Greet().SayGoodbye("gophers")
+	sammy.Greet2().SayGoodbye("gophers")
 
-	Creature.SayGoodbye(Creature.Greet(sammy), "gophers")
+	Creature.SayGoodbye(Creature.Greet2(sammy), "gophers")
 }

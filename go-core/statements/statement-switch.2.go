@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func main_2() {
 	flavors := []string{"chocolate", "vanilla", "strawberry", "banana"}
 
 	for _, flav := range flavors {

@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func for_string_range() {
 	sammy := "Sammy"
 
 	for _, letter := range sammy {

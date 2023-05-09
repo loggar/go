@@ -17,7 +17,7 @@ func log(header string, s fmt.Stringer) {
 	fmt.Println(header, ":", s)
 }
 
-func main() {
+func test_stringer() {
 	o := Ocean{
 		Creatures: []string{
 			"sea urchin",

@@ -37,7 +37,3 @@ func (s Sequence) String() string {
 	}
 	return str + "]"
 }
-
-func main() {
-
-}

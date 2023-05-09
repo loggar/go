@@ -21,7 +21,7 @@ func foo2() []interface{} {
 	return r
 }
 
-func main() {
+func test_empty() {
 	i := foo1()
 	fmt.Println(i) // 42
 

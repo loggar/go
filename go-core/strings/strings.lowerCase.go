@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func main() {
+func main_1() {
 	ss := "Sammy Shark"
 	fmt.Println(strings.ToUpper(ss))
 	fmt.Println(strings.ToLower(ss))

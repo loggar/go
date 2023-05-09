@@ -7,7 +7,7 @@ type Book struct {
 	Name string
 }
 
-func main() {
+func for_struct() {
 	list := []*Book{
 		{
 			Id:   123,

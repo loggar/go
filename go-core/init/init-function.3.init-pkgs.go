@@ -1,4 +1,4 @@
-package creature
+package main
 
 import (
 	"math/rand"

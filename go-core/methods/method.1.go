@@ -16,5 +16,6 @@ func main() {
 		Name:     "Sammy",
 		Greeting: "Hello!",
 	}
+
 	sammy.Greet()
 }

@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func main_3() {
 	c := struct {
 		Name string
 		Type string

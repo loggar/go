@@ -6,7 +6,7 @@ import (
 	"io"
 )
 
-func main() {
+func for_line() {
 	buf := bytes.NewBufferString("one\ntwo\nthree\nfour\n")
 
 	for {

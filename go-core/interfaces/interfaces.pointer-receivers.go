@@ -27,7 +27,7 @@ func submerge(s Submersible) {
 	s.Dive()
 }
 
-func main() {
+func main_pointer_receivers() {
 	s := &Shark{
 		Name: "Sammy",
 	}

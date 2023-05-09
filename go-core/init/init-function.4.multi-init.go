@@ -17,5 +17,3 @@ func init() {
 func init() {
 	fmt.Println("Fourth init")
 }
-
-func main() {}

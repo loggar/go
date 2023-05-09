@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func for_append() {
 	sharks := []string{"hammerhead", "great white", "dogfish", "frilled", "bullhead", "requiem"}
 
 	for range sharks {

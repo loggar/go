@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func for_2d_2() {
 	ints := [][]int{
 		[]int{0, 1, 2},
 		[]int{-1, -2, -3},

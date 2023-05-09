@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func main_3() {
 	var creature = "shark"
 	var pointer = &creature
 

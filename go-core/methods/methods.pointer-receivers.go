@@ -20,7 +20,7 @@ func (b Boat) Manifest() {
 	}
 }
 
-func main() {
+func test_3() {
 	b := &Boat{
 		Name: "S.S. DigitalOcean",
 	}

@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func for_map() {
 	sammyShark := map[string]string{"name": "Sammy", "animal": "shark", "color": "blue", "location": "ocean"}
 
 	for key, value := range sammyShark {

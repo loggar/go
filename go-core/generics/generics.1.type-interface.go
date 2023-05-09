@@ -9,7 +9,6 @@ func main() {
 	fmt.Printf("result %v\n", min(1, 2))
 	fmt.Printf("result %v\n", min(1, 2))
 	fmt.Printf("result %v\n", min(1, 2))
-
 }
 
 func min[T interface {

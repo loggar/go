@@ -2,15 +2,7 @@ package main
 
 import "fmt"
 
-type Creature struct {
-	Species string
-}
-
-func (c *Creature) Reset() {
-	c.Species = ""
-}
-
-func main() {
+func test_7() {
 	var creature Creature = Creature{Species: "shark"}
 
 	fmt.Printf("1) %+v\n", creature)

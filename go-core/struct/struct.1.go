@@ -2,12 +2,12 @@ package main
 
 import "fmt"
 
-type Creature struct {
+type Creature_1 struct {
 	Name string
 	Type string
 }
 
-func main() {
-	c := Creature{"Sammy", "Shark"}
+func main_1() {
+	c := Creature_1{"Sammy", "Shark"}
 	fmt.Println(c.Name, "the", c.Type)
 }

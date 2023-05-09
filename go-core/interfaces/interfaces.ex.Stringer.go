@@ -21,11 +21,11 @@ func (b Book) String() string {
 	return fmt.Sprintf("The %q book was written by %s.", b.Title, b.Author)
 }
 
-type Stringer interface {
+type Stringer_2 interface {
 	String() string
 }
 
-func main() {
+func test_stringer_2() {
 	a := Article{
 		Title:  "Understanding Interfaces in Go",
 		Author: "Sammy Shark",
@@ -40,6 +40,6 @@ func main() {
 	Print(b)
 }
 
-func Print(s Stringer) {
+func Print(s Stringer_2) {
 	fmt.Println(s.String())
 }

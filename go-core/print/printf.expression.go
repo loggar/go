@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func fn_print_f() {
 	num := 3
 	fmt.Printf("%v %T", num, num)
 }

@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func main() {
+func main_2() {
 	var i uint64 = 45
 	var str string
 	str = strconv.FormatUint(i, 10)

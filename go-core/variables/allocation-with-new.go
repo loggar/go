@@ -14,7 +14,7 @@ type SyncedBuffer struct {
 	buffer bytes.Buffer
 }
 
-func main() {
+func main_1() {
 	p := new(SyncedBuffer) // type *SyncedBuffer
 	var v SyncedBuffer     // type  SyncedBuffer
 

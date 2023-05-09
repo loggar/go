@@ -6,7 +6,7 @@ type Creature struct {
 	Species string
 }
 
-func main() {
+func test_4() {
 	var creature *Creature
 
 	fmt.Printf("1) %+v\n", creature)

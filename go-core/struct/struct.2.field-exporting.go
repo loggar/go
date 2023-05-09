@@ -2,15 +2,15 @@ package main
 
 import "fmt"
 
-type Creature struct {
+type Creature_2 struct {
 	Name string
 	Type string
 
 	password string
 }
 
-func main() {
-	c := Creature{
+func main_2() {
+	c := Creature_2{
 		Name: "Sammy",
 		Type: "Shark",
 
