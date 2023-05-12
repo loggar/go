@@ -13,7 +13,7 @@ func initPerson() *person {
 	return &p
 }
 
-func main() {
+func main_a_1() {
 	m := initPerson()
 	fmt.Printf("main: %p\n", m)
 }
