@@ -1,4 +1,15 @@
-# Golang modules
+# Golang modules and packages
+
+## GOPATH
+
+GOPATH is the path or the location in your system's disk where all the packages and modules are stored. You can get the default location of your GOPATH environment variable from the simple shell command.
+
+```
+$ echo $GOPATH
+/Users/<user>/go
+```
+
+## modules
 
 Init go mod:
 
