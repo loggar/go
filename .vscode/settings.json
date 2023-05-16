@@ -5,5 +5,8 @@
     },
     "go.gopath": "/Users/charly.lee/ws-loggar/go",
     "go.goroot": "/Users/charly.lee/.goenv/versions/1.18.5",
+    "go.testFlags": [
+        "-v"
+    ],
     "go.toolsGopath": "/Users/charly.lee/ws-loggar/go"
 }

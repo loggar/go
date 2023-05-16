@@ -49,3 +49,34 @@ with coverage output
 ```
 λ go test -cover -coverpofile=c.out
 ```
+
+## Log
+
+If you want to print some debug information when running tests, you should use the Log function from the testing package. Here's how you can use it:
+
+```go
+func TestSomething(t *testing.T) {
+    fmt.Println("Pi = ", math.Pi)
+
+    t.Log("This will be displayed when running tests")
+    t.Logf("This will be displayed when running tests %d", 1)
+}
+
+func TestSomething(t *testing.T) {
+    t.Error("This will be displayed only if the test fails")
+}
+```
+
+You can use the -v flag when running go test to see all t.Log statements, like this:
+
+```
+go test -v ./...
+```
+
+To run Go tests with the -v (verbose) flag in Visual Studio Code, you will need to modify the settings for your Go extension.
+
+```json
+{
+  "go.testFlags": ["-v"]
+}
+```
