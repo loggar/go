@@ -6,9 +6,9 @@ import (
 	"log"
 )
 
-// GetAstronauts fectch people from http request
+// GetAstronauts fetches people from http request
 func GetAstronauts(getWebRequest GetWebRequest) int {
-	url := "https://loggar.github.io/note/sample-res/sample.astros.json"
+	url := "https://raw.githubusercontent.com/loggar/note/master/docs/sample-res/sample.astros.json"
 	bodyBytes := getWebRequest.FetchBytes(url)
 	peopleResult := people{}
 	jsonErr := json.Unmarshal(bodyBytes, &peopleResult)
