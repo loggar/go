@@ -1,5 +1,12 @@
 # go test
 
+## test all files
+
+```
+go test ./...
+go test -v ./...
+```
+
 ## clean test-cache and test:
 
 ```
