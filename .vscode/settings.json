@@ -4,7 +4,8 @@
         "editor.formatOnSave": true
     },
     "go.gopath": "/Users/charly.lee/ws-loggar/go",
-    "go.goroot": "/Users/charly.lee/.goenv/versions/1.18.5",
+    // "go.goroot": "/Users/charly.lee/.goenv/shims",
+    "go.goroot": "/Users/charly.lee/.asdf/installs/golang/1.20/go",
     "go.testFlags": [
         "-v"
     ],
