@@ -58,3 +58,9 @@ func TestBytesBuffer(t *testing.T) {
 	}
 	assert.Equal(t, "jajarscript", buf.String(), "should equal")
 }
+
+func repeat(t *testing.T) {
+	// Repeat method for creating strings with given string and integer
+	pattern := "OK"
+	fmt.Println(strings.Repeat(pattern, 3))
+}
