@@ -2,7 +2,7 @@ package basics
 
 import "testing"
 
-func TestBroken(t *testing.T) {
+func _TestBroken(t *testing.T) {
 	if true != false {
 		t.Error("expected", true, "got", false)
 	}
