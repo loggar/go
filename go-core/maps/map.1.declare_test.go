@@ -14,8 +14,8 @@ func TestMapLiterals(t *testing.T) {
 	}
 
 	assert.Equal(t, 1, char_freq["M"], "char_freq[%s] should equal %s", "M", 1)
-	assert.Equal(t, 1, char_freq["e"], "char_freq[%s] should equal %s", "e", 2)
-	assert.Equal(t, 1, char_freq["t"], "char_freq[%s] should equal %s", "t", 3)
+	assert.Equal(t, 2, char_freq["e"], "char_freq[%s] should equal %s", "e", 2)
+	assert.Equal(t, 3, char_freq["t"], "char_freq[%s] should equal %s", "t", 3)
 }
 
 func TestMapMake(t *testing.T) {

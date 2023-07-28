@@ -11,7 +11,7 @@ func (testWebRequest) FetchBytes(url string) []byte {
 
 func TestGetAstronauts(t *testing.T) {
 	amount := GetAstronauts(testWebRequest{})
-	expect := 1
+	expect := 2
 	if amount != expect {
 		t.Errorf("People in space, got: %d, want: %d.", amount, expect)
 	}

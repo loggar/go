@@ -5,11 +5,12 @@ import (
 	"io/ioutil"
 	"os"
 	"path"
+	"path/filepath"
 )
 
 var gopath = os.Getenv("GOPATH")
 var rootDir = "/src/github.com/loggar/go"
-var saveDir = "/go_data/go-webapp/gowiki/"
+var saveDir = "/_out/go-webapp/gowiki/"
 
 // Page is an wiki page structure
 type Page struct {
@@ -20,6 +21,27 @@ type Page struct {
 func (p *Page) save() error {
 	title := p.Title
 	filename := path.Join(gopath, rootDir, saveDir, title+".txt")
+
+	// Check if file exists
+	_, err := os.Stat(filename)
+	if os.IsNotExist(err) {
+		dir := filepath.Dir(filename)
+
+		// If directories do not exist, create them
+		err = os.MkdirAll(dir, 0755)
+		if err != nil {
+			panic(err)
+		}
+
+		data := []byte("Your file content goes here") // Replace with your data
+		err = ioutil.WriteFile(filename, data, 0600)
+		if err != nil {
+			panic(err)
+		}
+	} else if err != nil {
+		panic(err)
+	}
+
 	return ioutil.WriteFile(filename, p.Body, 0600)
 }
 

@@ -143,7 +143,7 @@ func TestMathExp(t *testing.T) {
 
 	n = 128
 	y = math.Log2(n)
-	fmt.Println("Log2 of 100 = ", y)
+	fmt.Println("Log2 of 128 = ", y)
 
-	assert.Equal(t, 1, y, "Log2 of 100 should equal to %f", 1)
+	assert.Equal(t, float64(7), y, "Log2 of 128 should equal to %f", float64(7))
 }
