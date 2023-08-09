@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"path/filepath"
 )
@@ -17,4 +18,15 @@ func currentWorkDir() {
 		os.Exit(1)
 	}
 	fmt.Println(pwd)
+}
+
+func userHomeDir() string {
+	dir, err := os.UserHomeDir()
+	if err != nil {
+		log.Println(err)
+	} else {
+		log.Println(dir)
+	}
+
+	return dir
 }
