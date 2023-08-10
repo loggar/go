@@ -2,42 +2,63 @@
 
 ## go
 
-Install Go Plugin for ASDF
+Plug-in:
+
+```sh
+$ asdf list golang
+  No such plugin: golang
+
+$ asdf plugin-add go https://github.com/kennyp/asdf-golang.git
+
+$ asdf list golang
+  No versions installed
+```
+
+Install a `golang`:
+
+```sh
+$ asdf install golang 1.20.7
+
+$ asdf list golang
+  1.20.7
+```
+
+Uninstall a `golang`:
+
+```sh
+$ asdf uninstall golang 1.20.7
+```
+
+Set local `golang` for a project:
+
+```sh
+$ asdf local golang 1.20.7
+```
+
+This will update this file:
+
+`.tool-versions`
 
 ```
-asdf plugin-add go https://github.com/kennyp/asdf-golang.git
-```
-
-Install Go
-
-```
-asdf install go 1.20
-```
-
-Set Go Version in a local project
-
-```
-asdf local go 1.20
+golang 1.20.7
 ```
 
 Alternatively, you can set the global version like this:
 
-```
-asdf global go 1.20
-```
-
-## local file
-
-`.go-version`
-
-```
-1.20
+```sh
+$ asdf global golang 1.20.7
 ```
 
-or `.tool-versions`
+Set `$GOROOT`:
 
+```sh
+$ export GOROOT=$(asdf where golang)/go
 ```
-go 1.20
+
+Clean the Cache and Workspace: before building, clean your workspace and Go's build cache:
+
+```sh
+$ go clean -cache && go clean -modcache
 ```
 
 ## environment variables
