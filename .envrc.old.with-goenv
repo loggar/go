@@ -1,4 +1,0 @@
-export GOENV_VERSION=$(goenv version-name)
-export GOPATH=$HOME/ws-loggar/go
-export GOROOT=$(goenv prefix)
-export PATH=$GOROOT/bin:$GOPATH/bin:$PATH

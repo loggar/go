@@ -37,3 +37,12 @@ $ goenv shell 1.18.5
 # Set the installed Go version for a specific project, navigate to the project directory and use:
 $ goenv local 1.18.5
 ```
+
+`.envrc`:
+
+```sh
+export GOENV_VERSION=$(goenv version-name)
+export GOPATH=$HOME/ws-loggar/go
+export GOROOT=$(goenv prefix)
+export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+```
