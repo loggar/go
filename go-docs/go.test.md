@@ -87,3 +87,11 @@ To run Go tests with the -v (verbose) flag in Visual Studio Code, you will need 
   "go.testFlags": ["-v"]
 }
 ```
+
+## Run a fuzz test
+
+```
+go test -fuzz=FuzzEqual -v go-testing/fuzz-test/fuzz-test.1.fuzz_test.go
+go test -fuzz=FuzzEqual -fuzztime=10s -v go-testing/fuzz-test/fuzz-test.1.fuzz_test.go
+go test -fuzz=FuzzEqual -fuzztime=10m -v go-testing/fuzz-test/fuzz-test.1.fuzz_test.go
+```
