@@ -1,6 +1,6 @@
 module github.com/loggar/go
 
-go 1.18
+go 1.20
 
 require (
 	github.com/emicklei/go-restful v2.16.0+incompatible
