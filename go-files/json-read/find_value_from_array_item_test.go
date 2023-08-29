@@ -3,7 +3,7 @@ package json_sample_test
 import (
 	"testing"
 
-	json_sample "github.com/loggar/go/go-json/json-read"
+	json_sample "github.com/loggar/go/go-files/json-read"
 
 	"github.com/stretchr/testify/assert"
 )
