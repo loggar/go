@@ -5,7 +5,7 @@ import (
 	"os"
 	"path/filepath"
 
-	json_sample "github.com/loggar/go/go-json/json-read-write"
+	json_sample "github.com/loggar/go/go-json/json-read"
 )
 
 func main() {
@@ -15,8 +15,8 @@ func main() {
 		return
 	}
 
-	dataFilePath := filepath.Join(cwd, "./go-json/json-read-write", "data.ex.data.json")
-	jsonTarget1 := filepath.Join(cwd, "./go-json/json-read-write", "data.ex.target.json")
+	dataFilePath := filepath.Join(cwd, "./go-json/json-read", "data.ex.data.json")
+	jsonTarget1 := filepath.Join(cwd, "./go-json/json-read", "data.ex.target.json")
 	outFilePath := filepath.Join(cwd, "./_out/json", "data.out.1.json")
 
 	dataArray, err := json_sample.ReadArray(dataFilePath)
