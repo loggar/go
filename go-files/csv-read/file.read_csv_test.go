@@ -1,4 +1,4 @@
-package core_files
+package os_csv_files
 
 import (
 	"encoding/csv"

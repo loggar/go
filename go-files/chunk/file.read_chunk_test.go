@@ -1,4 +1,4 @@
-package core_files
+package os_txt_files
 
 import (
 	"bufio"
