@@ -17,7 +17,7 @@ func main() {
 
 	dataFilePath := filepath.Join(cwd, "./go-files/json-read", "data.ex.data.json")
 	jsonTarget1 := filepath.Join(cwd, "./go-files/json-read", "data.ex.target.json")
-	outFilePath := filepath.Join(cwd, "./_out/json", "data.out.1.json")
+	outFilePath := filepath.Join(cwd, "./_out/go-files/json", "data.out.1.json")
 
 	dataArray, err := json_sample.ReadArray(dataFilePath)
 	if err != nil {
