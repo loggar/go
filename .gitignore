@@ -11,12 +11,6 @@ debug
 # Test binary, build with `go test -c`
 *.test
 
-# code coverage
-coverage/
-
-# Output of the go coverage tool, specifically when used with LiteIDE
-/bin
-
 # visual studio code
 # .vscode
 
@@ -25,3 +19,6 @@ _tmp/
 
 # out
 /_out/
+
+# coverage
+# /_out/coverage.out
