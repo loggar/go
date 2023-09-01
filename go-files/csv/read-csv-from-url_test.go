@@ -5,6 +5,8 @@ import (
 	"log"
 	"net/http"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestReadFileFromUrl(t *testing.T) {
@@ -27,11 +29,10 @@ func TestReadFileFromUrl(t *testing.T) {
 
 	for _, line := range n {
 		for _, text := range line {
-			log.Println(text)
+			assert.NotEmpty(t, text, "items in csv")
 		}
 	}
 
-	// expected := [][]string{{"10", "22", "2022"}, {"golang", "21", "read"}}
-
-	// assert.Equal(t, expected, data, "read a scv by delimiter")
+	assert.Equal(t, 5, len(n), "read csv from url")
+	assert.Equal(t, 4, len(n[0]), "read csv from url")
 }
