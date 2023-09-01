@@ -1,12 +1,13 @@
-package main
+package os_csv_files
 
 import (
 	"encoding/csv"
 	"log"
 	"net/http"
+	"testing"
 )
 
-func main() {
+func TestReadFileFromUrl(t *testing.T) {
 	url := "https://github.com/loggar/go/raw/master/_in/go-files/csv/data.ex.1.csv"
 	response, err := http.Get(url)
 
@@ -29,4 +30,8 @@ func main() {
 			log.Println(text)
 		}
 	}
+
+	// expected := [][]string{{"10", "22", "2022"}, {"golang", "21", "read"}}
+
+	// assert.Equal(t, expected, data, "read a scv by delimiter")
 }
