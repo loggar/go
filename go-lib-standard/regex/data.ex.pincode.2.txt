@@ -1,0 +1,12 @@
+Pincode: 12345-1234
+01234567890123456789
+
+Assume 0 as 10 after 9, 11, and so on
+It starts from the 9th character as `1` and ends at the `4` character
+at position 18 but it returns the end position + 1 for the ease of slicing
+
+City, 40084
+012345678901
+
+State 123
+234567890

@@ -1,4 +1,4 @@
-package sql_utils
+package regex
 
 import (
 	"fmt"
