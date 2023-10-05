@@ -69,6 +69,10 @@ export GOROOT=$(asdf where golang)/go
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 ```
 
+## goland
+
+Settings > GO > GOROOT -> select go root for the project
+
 ## vscode
 
 `settings.json`
