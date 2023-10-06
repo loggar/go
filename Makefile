@@ -7,11 +7,25 @@ GOBUILD_VERSION_ARGS := -ldflags "-s -X '$(VERSION_VAR)=$(REPO_VERSION)' -X '$(G
 BINARY_NAME := $(REPO_NAME)
 BINARY_NAME_WORKER := $(REPO_NAME)-worker
 BINARY_OUT_DIR := ./_target/cmd
-COVER_OUT := ./_out/coverage.out
+COVER_DIR := ./_target/test
+COVER_OUT := coverage.out
+
+build-all: depend depend-tidy cover build
+
+depend:
+	go mod download
+
+depend-tidy:
+	go mod tidy -v
 
 build:
-	go build $(GOBUILD_VERSION_ARGS) -o ${BINARY_OUT_DIR}/$(BINARY_NAME) ./cmd/$(BINARY_NAME)
-	go build $(GOBUILD_VERSION_ARGS) -o ${BINARY_OUT_DIR}/$(BINARY_NAME_WORKER) ./cmd/$(BINARY_NAME_WORKER)
+	go build $(GOBUILD_VERSION_ARGS) -o $(BINARY_OUT_DIR)/$(BINARY_NAME) ./cmd/$(BINARY_NAME)
+	go build $(GOBUILD_VERSION_ARGS) -o $(BINARY_OUT_DIR)/$(BINARY_NAME_WORKER) ./cmd/$(BINARY_NAME_WORKER)
+
+clean:
+	rm -f $(COVER_DIR)/$(COVER_OUT)
+	rm -f $(BINARY_OUT_DIR)/$(BINARY_NAME)
+	rm -f $(BINARY_OUT_DIR)/$(BINARY_NAME_WORKER)
 
 test:
 	go test -vet=off ./...
@@ -26,9 +40,12 @@ bench-race:
 	go test -race -bench=. -run=XXX ./...
 
 cover:
-	go test -cover ./... -coverprofile=${COVER_OUT}
+	go test -cover ./... -coverprofile=$(COVER_DIR)/$(COVER_OUT)
 
 cover-report:
 	$(MAKE) cover || true
-	go tool cover -func=${COVER_OUT}
-	go tool cover -html=${COVER_OUT}
+	go tool cover -func=$(COVER_DIR)/$(COVER_OUT)
+	go tool cover -html=$(COVER_DIR)/$(COVER_OUT)
+
+# None of the Make tasks generates files with the name of the task, so all must be declared as 'PHONY'
+.PHONY: bench bench-race build build-all cover cover-report depend test test-race
