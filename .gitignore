@@ -19,6 +19,7 @@ _tmp/
 
 # out
 /_out/
+/_target/
 
 # coverage
 # /_out/coverage.out

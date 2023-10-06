@@ -6,7 +6,7 @@ GIT_HASH := $$(git rev-parse --short HEAD)
 GOBUILD_VERSION_ARGS := -ldflags "-s -X '$(VERSION_VAR)=$(REPO_VERSION)' -X '$(GIT_COMMIT_VAR)=$(GIT_HASH)'"
 BINARY_NAME := $(REPO_NAME)
 BINARY_NAME_WORKER := $(REPO_NAME)-worker
-BINARY_OUT_DIR := ./_out/cmd
+BINARY_OUT_DIR := ./_target/cmd
 COVER_OUT := ./_out/coverage.out
 
 build:
