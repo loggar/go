@@ -6,6 +6,12 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestMapLen(t *testing.T) {
+	var a map[string]int
+
+	assert.Nil(t, a, "not initialized map should be nil")
+	assert.Equal(t, 0, len(a), "not initialized map should have length 0")
+}
 func TestMapLiterals(t *testing.T) {
 	char_freq := map[string]int{
 		"M": 1,
