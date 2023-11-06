@@ -28,4 +28,37 @@ func TestMapKey(t *testing.T) {
 
 	assert.True(t, exist, "%s should exist", key)
 	assert.Equal(t, 5, value, "value should equal to %d", 5)
+
+	var key2 byte = 'x'
+	value2, exist2 := name_map[key2]
+	assert.False(t, exist2, "%s should not exist", key)
+	assert.Equal(t, 0, value2)
+}
+
+// MappingInfo is used to test struct arrays in a map
+type MappingInfo struct {
+	Path    string
+	Version string
+}
+
+func TestMapValue(t *testing.T) {
+	name_map := map[byte][]MappingInfo{
+		'm': {
+			{
+				Path:    "a",
+				Version: "1",
+			},
+		},
+	}
+
+	var key byte = 'm'
+	value, exist := name_map[key]
+
+	assert.True(t, exist, "%s should exist", key)
+	assert.Equal(t, "a", value[0].Path, "value should equal")
+
+	var key2 byte = 'x'
+	value2, exist2 := name_map[key2]
+	assert.False(t, exist2, "should not exist")
+	assert.Nil(t, value2)
 }
