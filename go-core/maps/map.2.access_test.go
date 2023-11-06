@@ -41,7 +41,30 @@ type MappingInfo struct {
 	Version string
 }
 
-func TestMapValue(t *testing.T) {
+func TestMapStructValue(t *testing.T) {
+	name_map := map[byte]MappingInfo{
+		'm': {
+			Path:    "a",
+			Version: "1",
+		},
+	}
+
+	var key byte = 'm'
+	value, exist := name_map[key]
+
+	assert.True(t, exist, "%s should exist", key)
+	assert.Equal(t, "a", value.Path, "value should equal")
+
+	var key2 byte = 'x'
+	value2, exist2 := name_map[key2]
+	assert.False(t, exist2, "should not exist")
+	assert.Equal(t, MappingInfo{
+		Path:    "",
+		Version: "",
+	}, value2)
+}
+
+func TestMapStructArrayValue(t *testing.T) {
 	name_map := map[byte][]MappingInfo{
 		'm': {
 			{
