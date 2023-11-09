@@ -20,3 +20,7 @@ _tmp/
 # out
 /_out/
 /_target/
+
+# wasm assets
+/go-wasm/**/assets/json.wasm
+/go-wasm/**/assets/wasm_exec.js
