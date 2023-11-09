@@ -23,7 +23,7 @@ func sender(ch chan<- int, wg *sync.WaitGroup) {
 	wg.Done()
 }
 
-func main() {
+func main_6() {
 	ch := make(chan int)
 	wg := sync.WaitGroup{}
 	wg.Add(2)
