@@ -8,7 +8,7 @@ import (
 )
 
 //lint:ignore U1000 // ignore unused variable warning
-func slices() {
+func slices_1() {
 	mySlice := []int{2, 3, 5, 7, 11, 13}
 	fmt.Println(mySlice)
 	// [2 3 5 7 11 13]
