@@ -8,11 +8,11 @@ Sentinel errors are bad, they introduce strong source and run time coupling, but
 
 The first problem is io.EOF is a public variable–any code that imports the io package could change the value of io.EOF. It turns out that most of the time this isn’t a big deal, but it could be a very confusing problem to debug.
 
-``` go
+```go
 fmt.Println(io.EOF == io.EOF) // true
 x := io.EOF
 fmt.Println(io.EOF == x)      // true
-	
+
 io.EOF = fmt.Errorf("whoops")
 fmt.Println(io.EOF == io.EOF) // true
 fmt.Println(x == io.EOF)      // false
@@ -20,7 +20,7 @@ fmt.Println(x == io.EOF)      // false
 
 The second problem is io.EOF behaves like a singleton, not a constant. Even if we follow the exact procedure used by the io package to create our own EOF value, they are not comparable.
 
-``` go
+```go
 err := errors.New("EOF")   // io/io.go line 38
 fmt.Println(io.EOF == err) // false
 ```
@@ -33,7 +33,7 @@ Before I introduce my solution, let’s recap how the error interface works in G
 
 With that background, consider this error implementation.
 
-``` go
+```go
 type Error string
 
 func (e Error) Error() string { return string(e) }
@@ -41,28 +41,28 @@ func (e Error) Error() string { return string(e) }
 
 It looks similar to the errors.errorString implementation that powers errors.New. However unlike errors.errorString this type is a constant expression.
 
-``` go
-const err = Error("EOF") 
+```go
+const err = Error("EOF")
 const err2 = errorString{"EOF"} // const initializer errorString literal is not a constant
 ```
 
 As constants of the Error type are not variables, they are immutable.
 
-``` go
-const err = Error("EOF") 
+```go
+const err = Error("EOF")
 err = Error("not EOF") // error, cannot assign to err
 ```
 
 Additionally, two constant strings are always equal if their contents are equal, which means two Error values with the same contents are equal.
 
-``` go
-const err = Error("EOF") 
+```go
+const err = Error("EOF")
 fmt.Println(err == Error("EOF")) // true
 ```
 
 Said another way, equal Error values are the same, in the way that the constant 1 is the same as every other constant 1.
 
-``` go
+```go
 const eof = Error("eof")
 
 type Reader struct{}
