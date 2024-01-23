@@ -40,3 +40,9 @@ Update transitive dependencies: When a direct dependency of your module has its 
 
 Prune the go.sum file: The go.sum file contains the cryptographic checksums of all the dependencies used in your project. The go mod tidy command removes the checksums of any unused dependencies, ensuring that the go.sum file is in sync with the actual dependencies listed in your go.mod file.
 ```
+
+## go module upgrade
+
+https://go.dev/wiki/Modules#how-to-upgrade-and-downgrade-dependencies
+
+Module upgrade util: https://github.com/oligot/go-mod-upgrade
