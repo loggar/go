@@ -46,3 +46,22 @@ Prune the go.sum file: The go.sum file contains the cryptographic checksums of a
 https://go.dev/wiki/Modules#how-to-upgrade-and-downgrade-dependencies
 
 Module upgrade util: https://github.com/oligot/go-mod-upgrade
+
+## clean
+
+```
+go clean -cache && go clean -modcache
+```
+
+if you're using a go.sum file and/or a vendor directory for vendoring dependencies, you should remove these to ensure they're freshly generated:
+
+```
+rm go.sum
+rm -rf vendor
+```
+
+Tidying Your Module
+
+```
+go mod tidy
+```
