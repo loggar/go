@@ -47,21 +47,44 @@ https://go.dev/wiki/Modules#how-to-upgrade-and-downgrade-dependencies
 
 Module upgrade util: https://github.com/oligot/go-mod-upgrade
 
+Module upgrade example:
+
+```
+$ go list -m all | grep github.com/gorilla/handlers
+github.com/gorilla/handlers v0.0.0-20161206055144-3a5767ca75ec
+
+$ go get github.com/gorilla/handlers@v1.3.0
+go: upgraded github.com/gorilla/handlers v0.0.0-20161206055144-3a5767ca75ec => v1.3.0
+
+$ go list -m all | grep github.com/gorilla/handlers
+github.com/gorilla/handlers v1.3.0
+```
+
 ## clean
 
 ```
+
 go clean -cache && go clean -modcache
+
 ```
 
 if you're using a go.sum file and/or a vendor directory for vendoring dependencies, you should remove these to ensure they're freshly generated:
 
 ```
+
 rm go.sum
 rm -rf vendor
+
 ```
 
 Tidying Your Module
 
 ```
+
 go mod tidy
+
+```
+
+```
+
 ```
