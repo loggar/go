@@ -1,0 +1,222 @@
+issues:
+  exclude:
+    - Error return value of .((os\.)?std(out|err)\..*|.*Close|.*Flush|os\.Remove(All)?|.*printf?|os\.(Un)?Setenv). is not checked
+    - func name will be used as test\.Test.* by other packages, and that stutters; consider calling this
+    - (possible misuse of unsafe.Pointer|should have signature)
+    - Use of unsafe calls should be audited
+    - Subprocess launch(ed with variable|ing should be audited)
+    - G104
+    - (Expect directory permissions to be 0750 or less|Expect file permissions to be 0600 or less)
+    - Potential file inclusion via variable
+  exclude-rules:
+    - linters:
+        - wrapcheck
+      path: _test\.go
+    - linters:
+        - bodyclose
+      path: _test\.go
+    - linters:
+        - forcetypeassert
+      path: _test\.go
+      source: args\.Get\(\d\)
+    - linters:
+        - gomoddirectives
+      text: replacement are not allowed
+  exclude-use-default: false
+  max-issues-per-linter: 0
+  max-same-issues: 0
+linters:
+  disable-all: true
+  enable:
+    - asasalint
+    - bidichk
+    - bodyclose
+    - containedctx
+    - depguard
+    - dogsled
+    - dupword
+    - durationcheck
+    - errcheck
+    - errorlint
+    - errname
+    - exportloopref
+    - forbidigo
+    - forcetypeassert
+    - gci
+    - gocheckcompilerdirectives
+    - gochecknoglobals
+    - gochecknoinits
+    - gocognit
+    - goconst
+    - gocritic
+    - gocyclo
+    - gofumpt
+    - goimports
+    - gomnd
+    - gomoddirectives
+    - gosec
+    - gosimple
+    - gosmopolitan
+    - govet
+    - ineffassign
+    - interfacebloat
+    - loggercheck
+    - makezero
+    - mirror
+    - misspell
+    - musttag
+    - nakedret
+    - nestif
+    - nilerr
+    - nilnil
+    - noctx
+    - nolintlint
+    - nosprintfhostport
+    - prealloc
+    - predeclared
+    - promlinter
+    - reassign
+    - revive
+    - rowserrcheck
+    - sqlclosecheck
+    - staticcheck
+    - stylecheck
+    - tagalign
+    - tenv
+    - testableexamples
+    - testpackage
+    - thelper
+    - tparallel
+    - typecheck
+    - unconvert
+    - unparam
+    - unused
+    - usestdlibvars
+    - wastedassign
+    - wrapcheck
+    - wsl
+linters-settings:
+  depguard:
+    rules:
+      main:
+        deny:
+          - pkg: github.com/ExpansiveWorlds/instrumentedsql
+            desc: Unmaintained, and performs poorly. Use github.com/luna-duclos/instrumentedsql
+          - pkg: github.com/gogo/protobuf
+            desc: Incompatible with github.com/golang/protobuf generated code in subtle ways that fail silently at runtime
+          - pkg: github.com/kr/pretty
+            desc: Performs poorly, do not use
+          - pkg: github.com/kr/text
+            desc: Performs poorly, do not use
+  errcheck:
+    check-blank: true
+  gci:
+    custom-order: true
+    sections:
+      - standard
+      - default
+      - prefix(CURRENT_MODULE) 
+  gocritic:
+    enabled-tags:
+      - diagnostic
+      - experimental
+      - performance
+      - style
+  gocyclo:
+    min-complexity: 10
+  gomnd:
+    checks:
+      - argument
+      - case
+      - condition
+      - operation
+      - return
+  govet:
+    check-shadowing: true
+  loggercheck:
+    no-printf-like: true
+    require-string-key: true
+    zap: true
+  musttag:
+    functions:
+      - name: github.com/jmoiron/sqlx.Get
+        tag: db
+        arg-pos: 1
+      - name: github.com/jmoiron/sqlx.MapScan
+        tag: db
+        arg-pos: 1
+      - name: github.com/jmoiron/sqlx.Select
+        tag: db
+        arg-pos: 1
+      - name: github.com/jmoiron/sqlx.StructScan
+        tag: db
+        arg-pos: 1
+      - name: (*github.com/jmoiron/sqlx.DB).Get
+        tag: db
+        arg-pos: 0
+      - name: (*github.com/jmoiron/sqlx.DB).Select
+        tag: db
+        arg-pos: 0
+      - name: (*github.com/jmoiron/sqlx.Row).MapScan
+        tag: db
+        arg-pos: 0
+      - name: (*github.com/jmoiron/sqlx.Row).StructScan
+        tag: db
+        arg-pos: 0
+      - name: (*github.com/jmoiron/sqlx.Rows).MapScan
+        tag: db
+        arg-pos: 0
+      - name: (*github.com/jmoiron/sqlx.Rows).StructScan
+        tag: db
+        arg-pos: 0
+      - name: (*github.com/jmoiron/sqlx.Stmt).Get
+        tag: db
+        arg-pos: 0
+      - name: (*github.com/jmoiron/sqlx.Stmt).Select
+        tag: db
+        arg-pos: 0
+      - name: (*github.com/jmoiron/sqlx.Tx).Get
+        tag: db
+        arg-pos: 0
+      - name: (*github.com/jmoiron/sqlx.Tx).Select
+        tag: db
+        arg-pos: 0
+      - name: (*github.com/shurcooL/graphql.Client).Query
+        tag: graphql
+        arg-pos: 1
+      - name: (*github.com/shurcooL/graphql.Client).Mutate
+        tag: graphql
+        arg-pos: 1
+  nakedret:
+    max-func-lines: 0
+  nestif:
+    min-complexity: 2
+  nolintlint:
+    require-explanation: true
+    require-specific: true
+  tenv:
+    all: true
+  wrapcheck:
+    ignoreSigs:
+      - .Errorf(
+      - errors.New(
+      - errors.Unwrap(
+      - .Wrap(
+      - .Wrapf(
+      - .WithMessage(
+      - .WithMessagef(
+      - .WithStack(
+      - status.Error(
+      - status.Errorf(
+      - status.New(
+      - status.Status).Err()
+      - tracing.SetErrOnSpan( 
+output:
+  sort-results: true
+  unique-by-line: false
+run:
+  skip-dirs:
+    - generated
+  skip-files:
+    - (.*\.|^)generated.*\.go
+  timeout: 10m

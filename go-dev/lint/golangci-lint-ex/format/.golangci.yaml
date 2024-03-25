@@ -1,0 +1,30 @@
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
+linters:
+  enable:
+    - gci
+    - gofumpt
+    - goimports
+    - nolintlint
+    - tagalign
+  disable-all: true
+linters-settings:
+  gci:
+    custom-order: true
+    sections:
+      - standard
+      - default
+      - prefix(CURRENT_MODULE) 
+  nolintlint:
+    require-explanation: true
+    require-specific: true
+output:
+  sort-results: true
+  unique-by-line: false
+run:
+  skip-dirs:
+    - generated
+  skip-files:
+    - (.*\.|^)generated.*\.go
+  timeout: 10m
