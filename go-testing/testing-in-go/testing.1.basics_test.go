@@ -24,7 +24,9 @@ func TestLogfInTesting(t *testing.T) {
 }
 
 func TestTruth(t *testing.T) {
-	if true != true {
+	i := 1 + 1
+
+	if i != 2 {
 		t.Error("everything I know is wrong")
 	}
 }
