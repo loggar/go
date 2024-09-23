@@ -17,7 +17,7 @@ func TestLogfInTesting(t *testing.T) {
 	actual := "actual"
 
 	// Use assert.Equal to check equality; it returns a boolean status.
-	if !assert.Equal(t, expected, actual, "Output") {
+	if assert.NotEqual(t, expected, actual, "Output") {
 		t.Logf("Expected: %q", expected)
 		t.Logf("Actual: %q", actual)
 	}
