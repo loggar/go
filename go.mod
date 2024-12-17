@@ -1,6 +1,8 @@
 module github.com/loggar/go
 
-go 1.20
+go 1.21
+
+toolchain go1.23.1
 
 require (
 	github.com/emicklei/go-restful v2.16.0+incompatible
@@ -30,4 +32,5 @@ require (
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/rogpeppe/go-internal v1.12.0 // indirect
 	golang.org/x/crypto v0.14.0 // indirect
+	google.golang.org/protobuf v1.36.0 // indirect
 )
