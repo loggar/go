@@ -24,3 +24,20 @@ complex128 the set of all complex numbers with float64 real and imaginary parts
 byte alias for uint8
 rune alias for int32 (represents a Unicode code point)
 ```
+
+## Size of integers
+
+```go
+var i int
+var i32 int32
+
+fmt.Printf("Size of int: %d bytes\n", unsafe.Sizeof(i))
+fmt.Printf("Size of int32: %d bytes\n", unsafe.Sizeof(i32))
+```
+
+The problem with converting from int to int32 in Go arises due to the potential loss of data. The int type can be either 32 bits or 64 bits depending on the system architecture (32-bit or 64-bit). When converting a larger int value to int32, there is a risk that the value may exceed the range that int32 can represent, which is from -2,147,483,648 to 2,147,483,647. This can lead to overflow and incorrect values.
+
+```go
+var largeInt int = 3000000000 // This is within the range of int on a 64-bit system
+var smallInt32 int32 = int32(largeInt) // This will cause overflow and result in an incorrect value
+```

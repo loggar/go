@@ -2,10 +2,9 @@ package main
 
 import (
 	"fmt"
-	"testing"
 )
 
-func numberConversion(t *testing.T) {
+func numberConversion() {
 	var i = 42
 	var f = float64(i)
 	var u = uint(f)
