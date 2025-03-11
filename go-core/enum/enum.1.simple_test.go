@@ -40,3 +40,5 @@ func IsBrand(s string) bool {
 	}
 	return false
 }
+
+// Test Brand toString
