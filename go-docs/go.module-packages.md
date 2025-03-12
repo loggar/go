@@ -68,29 +68,45 @@ github.com/gorilla/handlers v1.3.0
 
 ## clean
 
-```
-
+```sh
 go clean -cache && go clean -modcache
-
 ```
 
 if you're using a go.sum file and/or a vendor directory for vendoring dependencies, you should remove these to ensure they're freshly generated:
 
-```
-
+```sh
 rm go.sum
 rm -rf vendor
-
 ```
 
 Tidying Your Module
 
-```
-
+```sh
 go mod tidy
-
 ```
 
+## Check dependencies
+
+Check all modules in your dependency graph:
+
+```sh
+go list -m all | grep protobuf
 ```
 
+For more detailed information about the specific module:
+
+```sh
+go mod why -m github.com/golang/protobuf
+```
+
+To see which of your packages import it (directly or indirectly):
+
+```sh
+go list -f '{{if .Imports}}{{.ImportPath}} imports:{{join .Imports "\n  "}}{{end}}' ./... | grep -A1 protobuf
+```
+
+Check if it's in your go.sum file:
+
+```sh
+grep github.com/golang/protobuf go.sum
 ```
