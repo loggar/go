@@ -15,3 +15,9 @@ $ deadcode .
 $ deadcode -whylive=example.com/greet.hello .
 $ deadcode -test -filter=encoding/json encoding/json
 ```
+
+## Coverage
+
+```
+go tool cover -html=coverage.out
+```
