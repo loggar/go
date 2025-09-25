@@ -15,6 +15,20 @@ go clean -testcache && go test ./...
 go test -count=1 ./...
 ```
 
+## run a file
+
+```
+go test -run TestStart lib/a/a_test.go -count 1000
+go test lib/a/a_test.go -count 1000
+```
+
+## run a package
+
+```
+go test ./lib/a/.
+go test ./lib/a/...
+```
+
 ## launching tests (vervose)
 
 ```
