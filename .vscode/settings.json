@@ -5,7 +5,7 @@
     },
     "go.gopath": "/Users/charly.lee/ws-loggar/go",
     // "go.goroot": "/Users/charly.lee/.goenv/shims",
-    "go.goroot": "/Users/charly.lee/.asdf/installs/golang/1.23.1/go",
+    "go.goroot": "/Users/charly.lee/.asdf/installs/golang/1.25.3/go",
     "go.testFlags": [
         "-v"
     ],
